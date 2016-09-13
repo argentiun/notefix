@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>noteFix</title>
+  </head>
+  <body>
+
+    <header class="logo">
+      <a href="#" class="toggle-nav">
+        <span class="ion-navicon-round"></span>
+      </a>
+      <img src="img/icon.png" alt="icon" />
+      <form class="busq">
+                <input class="search" type="text" placeholder="Busque por producto o categoría" required>
+                <input type="button" value="Search">
+      </form>
+      <a href="#" class="search">
+          <span class="ion-ios-search-strong"></span>
+      </a>
+    </header>
+
+    <div class="container">
+
+      <nav class="izquierda">
+
+          <ul  class="lista">
+            <li class="linky">
+              <a href="index.html">Inicio</a>
+            </li >
+            <li class="linky">
+              <a href="">Productos</a>
+            </li>
+            <li class="linky">
+              <a href="">Repuestos</a>
+            </li>
+            <li class="linky">
+              <a href="login.html">Ingresar</a>
+            </li>
+            <li >
+              <a href="signup.html">Registrarse</a>
+            </li>
+          </ul>
+
+        </nav>
+
+      <section class="derecha">
+        <section class="login">
+          <div class="box">
+                  <form id = "register" class="log" action="" method="post" autocomplete="off">
+                      <p class="field"><label >Nombre:</label></p>
+                        <p><input name="nombre" type="text" placeholder="Ingresa tu nombre" autofocus="" required=""></p>
+                      <p class="field"><label >Apellido:</label></p>
+                          <p><input name="apellido" type="text" placeholder="Ingresa tu apellido" autofocus="" required=""></p>
+                      <p class="field"><label >Telefono:</label></p>
+                          <p><input type="tel" name="tel" placeholder="(011)-15-xxxxxxxx" required=""></p>
+                      <p class="field"><label>Email:</label></p>
+                          <p><input name="email" type="email" placeholder="Ingresa email, tambien sera tu usuario" required=""></p>
+                      <p class="field"><label>Contraseña:</label></p>
+                          <p><input name="pass1" type="password" placeholder="Ingresa Password" required=""></p>
+                      <p class="field"><label>Repetir contraseña:</label></p>
+                          <p><input name="pass2" type="password" placeholder="Repite Password" required=""></p>
+                      <p class="field">¿Desea suscribirse a nuestro boletín de novedades?</p>
+                        <p><input type="radio" name="boletin" value="si" checked> SI, quiero suscribirme.
+                        <input type="radio" name="boletin" value="no"> No, gracias.</p>
+                      <br><br>
+                        <a href="login.html">  ¿Ya tiene una cuenta? Haga click aquí para ingresar.</a>
+
+
+                      <p class="registrarse"><input type="submit" name="submit" value="Registrarse" class="boton"></p>
+                  </form>
+              </div>
+        </section>
+      </section>
+
+
+    </div>
+
+    <footer class="main-footer">
+      <ul>
+        <li><a href="#">quienes somos</a></li>
+        <li><a href="#">servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li class="sinborde"><a href="faq.html">FAQ</a></li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
