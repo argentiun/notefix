@@ -28,6 +28,10 @@ img{
   font-size: 2em;
   font-weight: 300;
 }
+
+.answer{
+  display: none;
+}
 .question{
   font-weight: bold;
 }
