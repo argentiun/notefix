@@ -37,7 +37,7 @@ window.onload = function (){
         if (tel.value.length === 0 ){
           alert("El campo Telefono Es obligatorio");
         }
-        if (onlytel.test(tel.value) ) {
+        if (!onlytel.test(tel.value) ) {
           console.log("Error: El telefono no es válido: " + tel.value);
           return false;
         }
@@ -68,16 +68,29 @@ window.onload = function (){
             return false;
         }
 
-        var nuevoUsuario = new XMLHttpRequest();
-        nuevoUsuario.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              console.log(nuevoUsuario.responseText);
+        var sumarUsuario = new XMLHttpRequest();
 
+        sumarUsuario.open("GET","https://sprint.digitalhouse.com/nuevoUsuario",true);
+        sumarUsuario.send();
+
+        sumarUsuario.onreadystatechange = function(){
+          if(sumarUsuario.readyState == 4 && sumarUsuario.status == 200){
+            console.log("el envio se envio bien");
           }
         };
 
-        nuevoUsuario.open("GET", "https://sprint.digitalhouse.com/nuevoUsuario", true);
-        nuevoUsuario.send();
+
+        var pedidoUsuarios = new XMLHttpRequest();
+        pedidoUsuarios.open("GET","https://sprint.digitalhouse.com/getUsuarios",true);
+        pedidoUsuarios.send();
+
+        pedidoUsuarios.onreadystatechange = function(){
+          if(pedidoUsuarios.readyState == 4 && pedidoUsuarios.status == 200){
+            var responseJSON = pedidoUsuarios.responseText;
+            var response = JSON.parse(responseJSON);
+            console.log(response.cantidad);
+          }
+        };
 
 
       });
