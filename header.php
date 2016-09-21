@@ -31,7 +31,7 @@
 
           <ul  class="lista">
             <li class="linky">
-              <a href="index.html">Inicio</a>
+              <a href="index.php">Inicio</a>
             </li >
             <li class="linky">
               <a href="">Productos</a>
@@ -40,46 +40,11 @@
               <a href="">Repuestos</a>
             </li>
             <li class="linky">
-              <a href="login.html">Ingresar</a>
+              <a href="login.php">Ingresar</a>
             </li>
             <li >
-              <a href="signup.html">Registrarse</a>
-            </li>
+              <a href="signup.php">Registrarse</a>
             </li>
           </ul>
 
         </nav>
-
-      <section class="derecha">
-        <section class="login">
-          <div class="box">
-                  <form class="log" action="" method="post" autocomplete="off">
-                      <p class="user"><label >Usuario:</label></p>
-                          <input name="usuario" type="text" placeholder="Ingresa Usuario" autofocus="" required=""></p>
-
-                      <p class="pass"><label>Contraseña:</label></p>
-                          <input name="contrasenia" type="password" placeholder="Ingresa Password" required=""></p>
-                      <a href="#">¿Olvidó su contraseña?</a> </br>
-                        <a href="signup.html">¿No tiene cuenta? Haga click aquí para registrarse.</a>
-
-
-                      <p class="ingresar"><input type="submit" name="submit" value="Ingresar" class="boton"></p>
-                  </form>
-              </div>
-        </section>
-      </section>
-
-
-    </div>
-
-    <footer class="main-footer-login">
-      <ul>
-        <li><a href="#">quienes somos</a></li>
-        <li><a href="#">servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li class="sinborde"><a href="faq.html">FAQ</a></li>
-      </ul>
-    </footer>
-
-  </body>
-</html>
