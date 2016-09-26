@@ -103,6 +103,19 @@
         return false;
     }
 
+		function traerUltimoId(){
+			if (count(traerTodosLosUsuarios()) < 0) {
+				return 1;
+			}else {
+				return ultimoUsuario()["id"] + 1;
+			}
+		}
+
+		function ultimoUsuario(){
+			$todos = traerTodosLosUsuarios();
+			return end($todos);
+		}
+
 		function registrarUsuario(){
         //1: Armar array correcto
         $arrayUsuario = [
@@ -110,7 +123,8 @@
 						"lastname" => $_POST["lastname"],
 						"tel" => $_POST["tel"],
             "email" => $_POST["email"],
-            "password" => password_hash($_POST["password"], PASSWORD_DEFAULT)
+            "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
+						"id" => traerUltimoId(),
         ];
 
         //2: Pasarlo a JSON
