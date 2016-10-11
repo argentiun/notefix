@@ -24,11 +24,7 @@
           <span class="ion-ios-search-strong"></span>
       </a>
     </header>
-
-    <div class="container">
-
-      <nav class="izquierda">
-
+    <nav class="izquierda">
           <ul  class="lista">
             <li class="linky">
               <a href="index.php">Inicio</a>
