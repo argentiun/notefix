@@ -1,6 +1,4 @@
 <?php
-
-  require_once("soporte.php");
   require_once("clases/validadorLogin.php");
   require_once("clases/usuario.php");
 
@@ -69,13 +67,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">1 Productoso</a>
+                                <a href="#">Notebooks</a>
                             </li>
                             <li>
-                                <a href="#">2 Productos</a>
+                                <a href="#">Netbooks</a>
                             </li>
                             <li>
-                                <a href="#">3 Productos</a>
+                                <a href="#">Tablets</a>
                             </li>
                         </ul>
                     </li>

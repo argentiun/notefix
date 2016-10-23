@@ -1,4 +1,4 @@
-<?php  require_once("header.php") ?>
+<?php require("soporte.php");?>
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->

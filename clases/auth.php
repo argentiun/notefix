@@ -1,7 +1,7 @@
-<?php 
+<?php
 	require_once("usuario.php");
 	require_once("repositorioUsuarios.php");
-	
+
 	class Auth {
 
 		public static $instancia;
@@ -32,7 +32,7 @@
 	    }
 
 	    public function estaLogueado() {
-	        return isset($_SESSION["usuarioLogueado"]);
+	        return !empty($_SESSION["usuarioLogueado"]);
 	    }
 
 
@@ -55,6 +55,8 @@
 		  {
 		      session_destroy();
 		      $this->unsetCookie("usuarioLogueado");
+					header('Location: '.$_SERVER['PHP_SELF']);
+				  die();
 		  }
 
 		  private function unsetCookie($nombreCookie)

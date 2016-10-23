@@ -5,7 +5,6 @@ window.onload = function (){
   var err4 = document.getElementById("err4");
   var err5 = document.getElementById("err5");
   var err6 = document.getElementById("err6");
-  var err7 = document.getElementById("err7");
 
     var name = document.getElementById("name");
     var lastname = document.getElementById("lastname");
@@ -24,9 +23,8 @@ window.onload = function (){
     err4.style.display = "none";
     err5.style.display = "none";
     err6.style.display = "none";
-    err7.style.display = "none";
 
-    function validar(){
+    function isValid(){
       if (name.value.length === 0 ){
         alert("Por favor, ingrese su nombre");
         err1.style.display = "block";
@@ -103,11 +101,7 @@ window.onload = function (){
       if ( pass2.value.length === 0 ) {
         alert("El campo repetir contraseña es obligatorio");
         err1.style.display = "block";
-        err7.style.display = "block";
         return false;
-      }
-      else {
-        err7.style.display = "none";
       }
 
       if (pass1.value.length != pass2.value.length){
@@ -119,7 +113,7 @@ window.onload = function (){
 
     form.addEventListener("submit", function(e){
 
-      if(!validar()){
+      if(!isValid()){
         e.preventDefault();
       }
 

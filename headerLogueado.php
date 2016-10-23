@@ -1,13 +1,10 @@
 <?php
-
-  require_once("soporte.php");
   require_once("clases/validadorLogin.php");
   require_once("clases/usuario.php");
-  if ($auth->estaLogueado()) {
-    $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_SESSION["usuarioLogueado"]);
-    echo "Bienvenido a noteFix ".$usuario->getName();
-  }
+
+  $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_SESSION["usuarioLogueado"]);
   $errores = [];
+
   if ($_POST &&  $_POST["submit"] == "Ingresar") {
     $validador = new ValidadorLogin();
 
@@ -72,13 +69,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">1 Productoso</a>
+                                <a href="#">Notebooks</a>
                             </li>
                             <li>
-                                <a href="#">2 Productos</a>
+                                <a href="#">Netbooks</a>
                             </li>
                             <li>
-                                <a href="#">3 Productos</a>
+                                <a href="#">Tablets</a>
                             </li>
                         </ul>
                     </li>
@@ -98,6 +95,17 @@
                     </li>
                     <li>
                         <a href="faq.php">FAQ</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$usuario->getName()?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Mi Cuenta</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost/PHP/noteFix/index.php?logout">Salir</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
