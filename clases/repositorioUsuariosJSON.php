@@ -39,13 +39,8 @@
 	    }
 
 	    public function traerProximoId() {
-	        //1: Me traigo todo el archivo
 	        $archivoUsuarios = file_get_contents("usuarios.json");
-
-	        //2: Lo divido por lineas
 	        $usuariosJSON = explode("\n", $archivoUsuarios);
-
-	        //3: Obtengo indice último usuario
 	        $cantidadUsuarios = count($usuariosJSON);
 	        $elUltimo = $cantidadUsuarios - 2;
 

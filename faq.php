@@ -1,4 +1,13 @@
-<?php require("soporte.php");?>
+<?php
+  require("soporte.php");
+
+  
+  if ($auth->estaLogueado()){
+    require_once("headerLogueado.php");
+  }else{
+    require_once("header.php");
+  }
+?>
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->

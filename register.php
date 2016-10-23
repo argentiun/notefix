@@ -11,45 +11,34 @@
     $valueEmail = "";
 
 
-    if (!empty($_POST) && $_POST["submit"] == "Registrarse")
-    {
+    if (!empty($_POST) && $_POST["submit"] == "Registrarse"){
         $validador = new ValidadorUsuario();
         //Se envió información
         $erroresRegister = $validador->validar($_POST, $repo);
 
-        if (empty($erroresRegister))
-        {
-            //No hay Errores
-
-            //Primero: Lo registro
+        if (empty($erroresRegister)){
             $usuario = new Usuario(
                 null,
                 $_POST["name"],
                 $_POST["lastname"],
                 $_POST["tel"],
                 $_POST["email"],
-                $_POST["password"]
+                $_POST["pass1"]
             );
             $usuario->setPassword($_POST["pass1"]);
             $usuario->guardar($repoUsuarios);
             $usuario->setAvatar($_FILES["avatar"]);
 
-            //Segundo: Lo envio al exito
-            header("Location:exito2.php");exit;
-
-
+            header("Location:exito2.php");die();
         }
 
-        if (!isset($erroresRegister["name"]))
-        {
+        if (!isset($erroresRegister["name"])){
             $valueName = $_POST["name"];
         }
-        if (!isset($erroresRegister["lastname"]))
-        {
+        if (!isset($erroresRegister["lastname"])){
             $valueLastname = $_POST["lastname"];
         }
-        if (!isset($erroresRegister["tel"]))
-        {
+        if (!isset($erroresRegister["tel"])){
             $valueTel = $_POST["tel"];
         }
         if (!isset($erroresRegister["email"]))
@@ -57,19 +46,19 @@
             $valueEmail = $_POST["email"];
         }
     }
+
+    if ($auth->estaLogueado()){
+      require_once("headerLogueado.php");
+    }else{
+      require_once("header.php");
+    }
 ?>
 
-<?php
-if ($auth->estaLogueado()) {
-  require_once("headerLogueado.php");
-} else {
-  require_once("header.php");
-} ?>
     <div class="container">
       <div class="row">
           <div class="col-md-8">
               <h3>Registrate</h3>
-              <form id="register" class="log" method="post" autocomplete="off">
+              <form id='register' class="log" action='' method='post' accept-charset='UTF-8' enctype="multipart/form-data" autocomplete="off">
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Nombre:</label>
@@ -174,6 +163,14 @@ if ($auth->estaLogueado()) {
                           </p>
                       </div>
                   </div>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                        <label for="avatar">Avatar</label>
+                        <input type="file" name="avatar" id="avatar"/>
+                          </p>
+                      </div>
+                  </div>
+
                   <p class="field">¿Desea suscribirse a nuestro boletín de novedades?</p>
                     <p><input id="radio1" type="radio" name="boletin" value="si" checked> SI, quiero suscribirme.
                     <input id="radio2" type="radio" name="boletin" value="no"> No, gracias.</p>

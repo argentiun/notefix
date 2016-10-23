@@ -4,7 +4,7 @@
 
 	$tipoRepositorio = "json";
 
-	switch($tipoRepositorio) {
+	switch($tipoRepositorio){
 		case "json":
 			$repo = new RepositorioJSON();
 			break;
@@ -13,14 +13,10 @@
 	$auth = Auth::getInstancia($repo->getRepositorioUsuarios());
 
 
-	if ($_SERVER['QUERY_STRING'] == "logout") {
+	if ($_SERVER['QUERY_STRING'] == "logout"){
 	  $auth->logout();
 	}
-	if ($auth->estaLogueado()) {
-	  require_once("headerLogueado.php");
-	} else {
-	  require_once("header.php");
-	}
+
 
 
 

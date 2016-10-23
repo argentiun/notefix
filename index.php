@@ -1,4 +1,12 @@
-<?php require("soporte.php");?>
+<?php
+  require("soporte.php");
+  
+  if ($auth->estaLogueado()){
+    require_once("headerLogueado.php");
+  }else{
+    require_once("header.php");
+  }
+?>
 
    <!--- ACA TERMINA LO QUE VA EN HEADER.PHP  SOLO TOOGLE NAV -->
     <!-- Header Carousel -->

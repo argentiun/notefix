@@ -36,8 +36,13 @@
 	    }
 
 
-	    public function guardarCookie(Usuario $usuario) {
-	        setcookie("usuarioLogueado", $usuario->getEmail(), time() + 3600 * 24);
+	    public function guardarCookie(Usuario $usuario, $recordar = false) {
+				if ($recordar) {
+					$time =  time() + 3600 * 24 * 7;
+				}else {
+					$time = 0;
+				}
+	        setcookie("usuarioLogueado", $usuario->getEmail(), $time);
 	    }
 
 	    private function autologuear(RepositorioUsuarios $repo) {

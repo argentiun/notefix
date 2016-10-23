@@ -3,18 +3,18 @@
   require_once("clases/usuario.php");
 
   $errores = [];
-  if ($_POST &&  $_POST["submit"] == "Ingresar") {
+
+  if ($_POST &&  $_POST["submit"] == "Ingresar"){
     $validador = new ValidadorLogin();
 
     $errores = $validador->validar($_POST, $repo);
 
-    if (empty($errores))
-    {
+    if (empty($errores)){
       $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
       $auth->loguear($usuario);
-      if ($validador->estaEnFormulario("recordame"))
-      {
-        $auth->guardarCookie($usuario);
+      if ($validador->estaEnFormulario("recordame")){
+        $recordar = $_POST["recordame"] == "si" ? true : false;
+        $auth->guardarCookie($usuario, $recordar);
       }
       header("Location:index.php");exit;
     }
@@ -107,6 +107,11 @@
                               </li>
                               <li>
                                 <p class="ingresar"><input type="submit" name="submit" value="Ingresar" class="boton" style="background-color:#555555; border-radius:5px; color:white;"></p>
+                              </li>
+                              <li>
+                                <p class="field">Recordarme </p>
+                                <input id="radio1" type="radio" name="recordame" value="si" checked>Si
+                                <input id="radio2" type="radio" name="recordame" value="no">No
                                 </form>
                               </li>
                               <li>
