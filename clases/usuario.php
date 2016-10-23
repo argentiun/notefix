@@ -93,6 +93,7 @@
 				"id" => $this->getId(),
 				"name" => $this->getName(),
 				"lastname" => $this->getLastname(),
+				"tel"=>$this->getTel(),
 				"email" => $this->getEmail(),
 				"password" => $this->getPassword(),
 			];

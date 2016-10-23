@@ -1,17 +1,11 @@
+<?php require("soporte.php");?>
 <?php
+if ($auth->estaLogueado()) {
+  require_once("headerLogueado.php");
+} else {
+  require_once("header.php");
+} ?>
 
-  require("soporte.php");
-
-  $repoUsuarios = $repo->getRepositorioUsuarios();
-
-  $usuarioLogueado = $auth->traerUsuarioLogueado($repoUsuarios);
-
-  if ($usuarioLogueado) {
-
-    $imagenPerfil = $usuarioLogueado->getAvatar();
-  }
-?>
-<?php require_once("header.php");  ?>
    <!--- ACA TERMINA LO QUE VA EN HEADER.PHP  SOLO TOOGLE NAV -->
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">

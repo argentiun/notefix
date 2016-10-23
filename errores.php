@@ -1,11 +1,6 @@
-<?php if (!empty($errores)) { ?>
-    <div class="container">
-        <ul style="color:red">
-        <?php foreach($errores as $error) { ?>
-            <li>
-                <?= $error ?>
-            </li>
-        <?php } ?>
-        </ul>
-    </div>
-<?php } ?>
+<?php
+if (!empty($errores)) {
+  foreach ($errores as $error) {
+    echo "<li>".$error."</li>";
+  }
+}

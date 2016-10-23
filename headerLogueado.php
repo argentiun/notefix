@@ -3,7 +3,10 @@
   require_once("soporte.php");
   require_once("clases/validadorLogin.php");
   require_once("clases/usuario.php");
-
+  if ($auth->estaLogueado()) {
+    $usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_SESSION["usuarioLogueado"]);
+    echo "Bienvenido a noteFix ".$usuario->getName();
+  }
   $errores = [];
   if ($_POST &&  $_POST["submit"] == "Ingresar") {
     $validador = new ValidadorLogin();
@@ -92,35 +95,6 @@
                                 <a href="#">3 Reparacion</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logueate! <b class="caret"></b></a>
-                          <ul class="dropdown-menu" style="text-align:center;">
-                            <?php include("errores.php"); ?>
-                              <li>
-                                <p class="user"><label >Email:</label></p>
-                                <form method="POST">
-                                  <input name="email" type="text" placeholder="Ingresa Email" autofocus="" value="<?= $emailLogin?>" >
-                              </li>
-                              <li>
-                                <p class="pass"><label>Contraseña:</label></p>
-                                    <input name="password" type="password" placeholder="Ingresa Password">
-                              </li>
-                              <li>
-                                <p class="ingresar"><input type="submit" name="submit" value="Ingresar" class="boton" style="background-color:#555555; border-radius:5px; color:white;"></p>
-                                </form>
-                              </li>
-                              <li>
-                                  <a href="signup.html">¿No tiene cuenta?</a>
-                              </li>
-                              <li>
-                                  <a href="#">¿Olvidó su contraseña?</a>
-                              </li>
-                          </ul>
-                        </li>
-                    <li>
-                        <a href="register.php">Registrate!</a>
                     </li>
                     <li>
                         <a href="faq.php">FAQ</a>

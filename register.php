@@ -4,23 +4,20 @@
 
     $repoUsuarios = $repo->getRepositorioUsuarios();
 
-    if ($auth->estaLogueado()) {
-        header("Location:inicio.php");exit;
-    }
-    $errores = [];
+    $erroresRegister = [];
     $valueName = "";
     $valueLastname = "";
     $valueTel = "";
     $valueEmail = "";
 
 
-    if (!empty($_POST))
+    if (!empty($_POST) && $_POST["submit"] == "Registrarse")
     {
         $validador = new ValidadorUsuario();
         //Se envió información
-        $errores = $validador->validar($_POST, $repo);
+        $erroresRegister = $validador->validar($_POST, $repo);
 
-        if (empty($errores))
+        if (empty($erroresRegister))
         {
             //No hay Errores
 
@@ -43,19 +40,19 @@
 
         }
 
-        if (!isset($errores["name"]))
+        if (!isset($erroresRegister["name"]))
         {
             $valueName = $_POST["name"];
         }
-        if (!isset($errores["lastname"]))
+        if (!isset($erroresRegister["lastname"]))
         {
             $valueLastname = $_POST["lastname"];
         }
-        if (!isset($errores["tel"]))
+        if (!isset($erroresRegister["tel"]))
         {
             $valueTel = $_POST["tel"];
         }
-        if (!isset($errores["email"]))
+        if (!isset($erroresRegister["email"]))
         {
             $valueEmail = $_POST["email"];
         }
@@ -72,13 +69,13 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Nombre:</label>
-                          <input name="name" type="text" class="form-control" id="name" required data-validation-required-message="Ingresa tu nombre" value="<?=$valueName?>">
+                          <input name="name" type="text" class="form-control" id="name"  data-validation-required-message="Ingresa tu nombre" value="<?=$valueName?>">
                           <!-- error -->
-                          <p id="err2" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su nombre</p>
+                          <p id="err1" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su nombre</p>
                             <?php
-                              if (isset($errores["name"])) {
+                              if (isset($erroresRegister["name"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["name"];
+                                echo $erroresRegister["name"];
                                 echo "</p>";
                               }
                             ?>
@@ -88,14 +85,14 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Apellido:</label>
-                          <input name="lastname" type="text" class="form-control" id="lastname" required data-validation-required-message="Ingresa tu apellido" value="<?=$valueLastname?>">
+                          <input name="lastname" type="text" class="form-control" id="lastname"  data-validation-required-message="Ingresa tu apellido" value="<?=$valueLastname?>">
                           <!-- error -->
-                                <p id="err3" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su apellido</p>
+                                <p id="err2" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su apellido</p>
                           <p>
                             <?php
-                              if (isset($errores["lastname"])) {
+                              if (isset($erroresRegister["lastname"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["lastname"];
+                                echo $erroresRegister["lastname"];
                                 echo "</p>";
                               }
                               ?>
@@ -106,14 +103,14 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Telefono:</label>
-                          <input name="tel" type="tel" class="form-control" id="tel" required data-validation-required-message="(011)-15-xxxxxxxx" value="<?=$valueTel?>">
+                          <input name="tel" type="tel" class="form-control" id="tel"  data-validation-required-message="(011)-15-xxxxxxxx" value="<?=$valueTel?>">
                           <!-- error -->
-                                <p id="err4" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>El campo Telefono es obligatorio</p>
+                                <p id="err3" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>El campo Telefono es obligatorio</p>
                           <p>
                             <?php
-                              if (isset($errores["tel"])) {
+                              if (isset($erroresRegister["tel"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["tel"];
+                                echo $erroresRegister["tel"];
                                 echo "</p>";
                               }
                               ?>
@@ -124,14 +121,14 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Email:</label>
-                          <input name="email" type="email" class="form-control" id="email" required data-validation-required-message="Ingresa tu email, tambien sera tu usuario" value="<?=$valueEmail?>">
+                          <input name="email" type="email" class="form-control" id="email"  data-validation-required-message="Ingresa tu email, tambien sera tu usuario" value="<?=$valueEmail?>">
                           <!-- error -->
-                            <p id="err5" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su email</p>
+                            <p id="err4" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese su email</p>
                           <p>
                             <?php
-                              if (isset($errores["email"])) {
+                              if (isset($erroresRegister["email"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["email"];
+                                echo $erroresRegister["email"];
                                 echo "</p>";
                               }
                               ?>
@@ -141,14 +138,14 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Contraseña:</label>
-                          <input name="pass1" type="password" class="form-control" id="pass1" required data-validation-required-message="Ingresa Password">
+                          <input name="pass1" type="password" class="form-control" id="pass1"  data-validation-required-message="Ingresa Password">
                           <!-- error -->
-                            <p id="err6" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese una contraseña</p>
+                            <p id="err5" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese una contraseña</p>
                           <p>
                             <?php
-                              if (isset($errores["pass"])) {
+                              if (isset($erroresRegister["pass"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["pass"];
+                                echo $erroresRegister["pass"];
                                 echo "</p>";
                               }
                               ?>
@@ -158,14 +155,14 @@
                   <div class="control-group form-group">
                       <div class="controls">
                           <label>Repetir contraseña:</label>
-                          <input name="pass2" type="password" class="form-control" id="pass2" required data-validation-required-message="Repite Password">
+                          <input name="pass2" type="password" class="form-control" id="pass2" data-validation-required-message="Repite Password">
                           <!-- error -->
-                          <p id="err7" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese una contraseña</p>
+                          <p id="err6" style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>Por favor, ingrese una contraseña</p>
                           <p>
                             <?php
-                              if (isset($errores["pass"])) {
+                              if (isset($erroresRegister["pass"])) {
                                 echo "<p style=' font-size: 0.82em; background-color: white; color: red; padding: 5px;'>";
-                                echo $errores["pass"];
+                                echo $erroresRegister["pass"];
                                 echo "</p>";
 
                               }
@@ -182,7 +179,7 @@
                     <br>
                   <div id="success"></div>
                   <!-- For success/fail messages -->
-                  <button type="submit" class="btn btn-primary">Registrarse</button>
+                  <input type="submit" name="submit" value="Registrarse" class="btn btn-primary"/>
               </form>
           </div>
 

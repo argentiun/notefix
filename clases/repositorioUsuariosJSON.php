@@ -22,7 +22,7 @@
 	        //4: Recorro mis lineas y las paso a arrays
 	        foreach ($usuariosJSON as $usuarioJSON) {
 	        	$usuarioArray = json_decode($usuarioJSON, true);
-
+						// var_dump($usuarioJSON);
 	        	$usuario = new Usuario(
 							$usuarioArray["id"],
 							$usuarioArray["name"],
