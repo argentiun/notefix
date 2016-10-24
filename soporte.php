@@ -17,6 +17,12 @@
 	  $auth->logout();
 	}
 
+	if ($_SERVER['QUERY_STRING'] == "registerok"){
+		echo '<script language="JavaScript">
+						alert("Has sido registrado con exito,inicia secion para validar tu usuario!")
+          </script>';
+	}
+
 
 
 

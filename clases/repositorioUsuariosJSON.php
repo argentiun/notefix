@@ -65,4 +65,11 @@
 
 	    	file_put_contents("usuarios.json", $usuarioJSON . "\n", FILE_APPEND);
 	    }
+
+			public function modificar(){
+				$archivoUsuarios = file_get_contents("usuarios.json");
+				$usuariosJSON = explode("\n", $archivoUsuarios);
+				print_r($usuariosJSON);die();
+				// in_array(,$usuariosJSON)
+		}
 	}

@@ -29,7 +29,7 @@
             $usuario->guardar($repoUsuarios);
             $usuario->setAvatar($_FILES["avatar"]);
 
-            header("Location:exito2.php");die();
+            header("Location:index.php?registerok");die();
         }
 
         if (!isset($erroresRegister["name"])){
