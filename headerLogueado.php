@@ -97,13 +97,13 @@
                         <a href="faq.php">FAQ</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=$usuario->getName()?> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle"data-toggle="dropdown"> <img src="<?=$usuario->getAvatar()?>" alt="" class="img-circle" style="height: 30px; display:inline-block;" />     <?=$usuario->getName()?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="#">Mi Cuenta</a>
                             </li>
                             <li>
-                                <a href="http://localhost/PHP/noteFix/index.php?logout">Salir</a>
+                                <a href="index.php?logout">Salir</a>
                             </li>
                         </ul>
                     </li>

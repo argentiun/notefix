@@ -1,6 +1,6 @@
 <?php
   require("soporte.php");
-  
+
   if ($auth->estaLogueado()){
     require_once("headerLogueado.php");
   }else{
@@ -21,19 +21,19 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://www.kkaskaras.gr/wp-content/uploads/2012/12/notebook-banner-720x240.jpg');"></div>
+                <div class="fill" style="background-image:url('img/note-1.png');"></div>
                 <div class="carousel-caption">
                     <h2>NoteBooks</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('https://www.asus.com/websites/global/products/4NCrBoVHxzty7brJ/top_banner.jpg');"></div>
+                <div class="fill" style="background-image:url('img/note-2.png');"></div>
                 <div class="carousel-caption">
                     <h2>Netbooks</h2>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://androidspin.com/wp-content/uploads/2013/11/Archos-101-XS-2-banner.png');"></div>
+                <div class="fill" style="background-image:url('img/tab-1.png');"></div>
                 <div class="carousel-caption">
                     <h2>Tablets</h2>
                 </div>
@@ -52,17 +52,17 @@
     <!-- Page Content -->
     <div class="container">
 <!--
-        <!-- Marketing Icons Section -->
+        <!-- Bienvenida -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Bienvenido a NoteFix
                 </h1>
-                <p>
+                 <p class="lead">
                   En noteFix contamos con mas de 10 años de experiencia. Nos importa que nuestros clientes sean tanto particulares como comerciales. Todos merecen precios convenientes y servicio de calidad.Nos enorgullecemos de nuestra atención al cliente y de nuestra rápida respuesta a sus necesidades.
                 </p>
             </div>
-        <!-- Features Section -->
+        <!-- Reparaciones -->
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header">Reparaciones noteFix</h2>
@@ -86,7 +86,7 @@
 
         <hr>
 
-        <!-- Call to Action Section -->
+        <!-- Transporte  -->
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
@@ -104,7 +104,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Notefix 2016</p>
                 </div>
             </div>
         </footer>
