@@ -7,22 +7,18 @@
 
 	        $usuarios = [];
 
-	        //1: Me traigo todo el archivo
 	        $archivoUsuarios = file_get_contents("usuarios.json");
 
-	        //2: Lo divido por lineas
 	        $usuariosJSON = explode("\n", $archivoUsuarios);
 
-	        //3: Borro la linea vacía del final
 	        $cantidadUsuarios = count($usuariosJSON);
 	        $elUltimo = $cantidadUsuarios - 1;
 
 	        unset($usuariosJSON[$elUltimo]);
 
-	        //4: Recorro mis lineas y las paso a arrays
 	        foreach ($usuariosJSON as $usuarioJSON) {
 	        	$usuarioArray = json_decode($usuarioJSON, true);
-						// var_dump($usuarioJSON);
+
 	        	$usuario = new Usuario(
 							$usuarioArray["id"],
 							$usuarioArray["name"],
@@ -48,7 +44,6 @@
 	            return 1;
 	        }
 
-	        //4: Traigo el último usuario
 	        $ultimoUsuario = $usuariosJSON[$elUltimo];
 
 	        $ultimoUsuario = json_decode($ultimoUsuario, true);
@@ -70,6 +65,5 @@
 				$archivoUsuarios = file_get_contents("usuarios.json");
 				$usuariosJSON = explode("\n", $archivoUsuarios);
 				print_r($usuariosJSON);die();
-				// in_array(,$usuariosJSON)
 		}
 	}

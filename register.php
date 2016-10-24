@@ -13,7 +13,7 @@
 
       if (!empty($_POST) && $_POST["submit"] == "Registrarse"){
           $validador = new ValidadorUsuario();
-          //Se envió información
+          
           $erroresRegister = $validador->validar($_POST, $repo);
 
           if (empty($erroresRegister)){

@@ -57,19 +57,15 @@
 
 				$usuarios = [];
 
-				//1: Me traigo todo el archivo
 				$archivoUsuarios = file_get_contents("usuarios.json");
 
-				//2: Lo divido por lineas
 				$usuariosJSON = explode("\n", $archivoUsuarios);
 
-				//3: Borro la linea vacía del final
 				$cantidadUsuarios = count($usuariosJSON);
 				$elUltimo = $cantidadUsuarios - 1;
 
 				unset($usuariosJSON[$elUltimo]);
 
-				//4: Recorro mis lineas y las paso a arrays
 				foreach ($usuariosJSON as $usuarioJSON) {
 						$usuarios[] = json_decode($usuarioJSON, true);
 				}
@@ -78,10 +74,8 @@
 		}
 
 		function traerUsuarioPorEmail($email) {
-        //1: Me traigo todos los usuarios y ya opero con arrays
         $usuarios = traerTodosLosUsuarios();
 
-        //2: Los recorro y si alguno es el que busco, devuelvo
         foreach($usuarios as $usuario)
         {
             if ($usuario["email"] == $email)
@@ -117,7 +111,6 @@
 		}
 
 		function registrarUsuario(){
-        //1: Armar array correcto
         $arrayUsuario = [
             "name" => $_POST["name"],
 						"lastname" => $_POST["lastname"],
@@ -127,9 +120,7 @@
 						"id" => traerUltimoId(),
         ];
 
-        //2: Pasarlo a JSON
         $jsonUsuario = json_encode($arrayUsuario);
 
-        //3: Lo guardo en archivo
         file_put_contents("usuarios.json", $jsonUsuario . "\n", FILE_APPEND);
     }

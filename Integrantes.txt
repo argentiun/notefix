@@ -3,3 +3,23 @@
 "Kevin Ghio",
 "Lucas Bonder",
 }
+
+Kevin: 
+- registración del sitio pudiendo guardar los usuarios en un archivo JSON.
+
+- login.
+
+- formulario validado desde el lado del servidor.
+
+- Persistencia de datos.
+
+- "Recordar usuario"
+
+- Programación Orientado a Objetos.
+
+Gabriel: Avatar en usuario logueado.
+
+
+______
+
+En este sprint logramos cambiar la visual de la pagina y comportamiento, brindando funcionalidad a los usuarios y counicacion con cliente.
