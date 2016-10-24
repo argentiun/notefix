@@ -59,7 +59,7 @@
                     Bienvenido a NoteFix
                 </h1>
                  <p class="lead">
-                  En noteFix contamos con mas de 10 años de experiencia. Nos importa que nuestros clientes sean tanto particulares como comerciales. Todos merecen precios convenientes y servicio de calidad.Nos enorgullecemos de nuestra atención al cliente y de nuestra rápida respuesta a sus necesidades.
+                  En noteFix contamos con mas de 10 años de experiencia. Nos importa que nuestros clientes sean tanto particulares como comerciales. Todos merecen precios convenientes y servicio de calidad. Nos enorgullecemos de nuestra atención  y de nuestra rápida respuesta a sus necesidades.
                 </p>
             </div>
         <!-- Reparaciones -->
