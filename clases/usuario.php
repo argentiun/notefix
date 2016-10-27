@@ -46,7 +46,7 @@
 		}
 		public function getAvatar()
 		{
-			$name = "img/" . $this->getId();
+			$name = "img/" . $this->getEmail();
 			$matching = glob($name . ".*");
 
 			$info = pathinfo($matching[0]);
@@ -80,7 +80,7 @@
 
 				$ext = pathinfo($avatar["name"], PATHINFO_EXTENSION);
 
-				move_uploaded_file($avatar["tmp_name"], $path . $this->getId() . "." . $ext);
+				move_uploaded_file($avatar["tmp_name"], $path . $this->getEmail() . "." . $ext);
 			}
 		}
 

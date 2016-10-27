@@ -26,8 +26,10 @@
                   $_POST["pass1"]
               );
               $usuario->setPassword($_POST["pass1"]);
-              $usuario->setAvatar($_FILES["avatar"]);
               $usuario->guardar($repoUsuarios);
+              $usuario->setAvatar($_FILES["avatar"]);
+
+
 
               header("Location:index.php?registerok");die();
           }

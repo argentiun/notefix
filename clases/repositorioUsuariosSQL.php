@@ -3,12 +3,17 @@
 
 	class RepositorioUsuariosSQL extends RepositorioUsuarios {
 
-		private $conn;
-
+		public $conn;
+		public $lastId;
 		public function __construct(PDO $conn) {
 			$this->conn = $conn;
 		}
-
+		public function setLastId(){
+			$this->lastid =  $this->conn->lastInsertId();
+		}
+		public function getLastId(){
+			return $this->lastId;
+		}
 		public function traerTodosLosUsuarios() {
 
 			$usuarios = [];
@@ -27,7 +32,7 @@
 							$usuarioArray["lastname"],
 							$usuarioArray["tel"],
 	        		$usuarioArray["email"],
-	        		$usuarioArray["password"]
+	        		$usuarioArray["pass"]
 	        	);
 
 	            $usuarios[] = $usuario;
@@ -39,7 +44,7 @@
 
 	    public function guardar(Usuario $usuario) {
 	    	if ($usuario->getId() == null) {
-	    		$sql = "INSERT into user(id,name,lastname,tel,email,pass,creationdate) values (DEFAULT, :name, :lastname, :tel, :email, :pass,DEFAULT)";
+	    		$sql = "INSERT into user(id,name,lastname,tel,email,pass,creationdate) values (DEFAULT, :name, :lastname, :tel, :email, :pass, DEFAULT)";
 	    	}
 	    	else {
 	    		$sql = "UPDATE user set
@@ -55,7 +60,7 @@
 
 	    	$query->bindValue(":name", $usuario->getName(), PDO::PARAM_STR);
 				$query->bindValue(":lastname", $usuario->getLastname(), PDO::PARAM_STR);
-				$query->bindValue(":tel", $usuario->getTel(), PDO::PARAM_INT);
+				$query->bindValue(":tel", $usuario->getTel(), PDO::PARAM_STR);
 	    	$query->bindValue(":email", $usuario->getEmail(), PDO::PARAM_STR);
 	    	$query->bindValue(":pass", $usuario->getPassword(), PDO::PARAM_STR);
 
