@@ -14,15 +14,15 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 $reposql = new RepositorioUsuariosSQL($conn);
-foreach ($usuarios as $usuarioArray) {
+foreach ($usuarios as $usuario) {
 
   $usuario = new Usuario(
-    $usuarioArray["id"],
-    $usuarioArray["name"],
-    $usuarioArray["lastname"],
-    $usuarioArray["tel"],
-    $usuarioArray["email"],
-    $usuarioArray["password"]
+    $usuario["id"],
+    $usuario["name"],
+    $usuario["lastname"],
+    $usuario["tel"],
+    $usuario["email"],
+    $usuario["password"]
   );
 
     $reposql->guardar($usuario);
