@@ -42,6 +42,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/avatar.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilostemplate.css">
 </head>
 
@@ -97,10 +98,14 @@
                         <a href="faq.php">FAQ</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle"data-toggle="dropdown"> <img src="<?=$usuario->getAvatar()?>" alt="" class="img-circle" style="height: 30px; display:inline-block;" />     <?=$usuario->getName()?> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle"data-toggle="dropdown">
+                           <!-- alt="" class="img-circle" style="height: 30px; display:inline-block;"  -->
+                          <img class="avatar" src="<?=$usuario->getAvatar()?>"/>
+                          <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">Mi Cuenta</a>
+                                <a href="#"><?=$usuario->getName()?></a>
                             </li>
                             <li>
                                 <a href="index.php?logout">Salir</a>

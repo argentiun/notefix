@@ -7,7 +7,6 @@
     require_once("header.php");
   }
 ?>
-
    <!--- ACA TERMINA LO QUE VA EN HEADER.PHP  SOLO TOOGLE NAV -->
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">

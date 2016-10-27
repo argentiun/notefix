@@ -1,5 +1,7 @@
 <?php
+
 	require_once("repositorioUsuarios.php");
+	require_once("usuario.php");
 
 	class RepositorioUsuariosJSON extends RepositorioUsuarios {
 
@@ -7,15 +9,19 @@
 
 	        $usuarios = [];
 
+	        //1: Me traigo todo el archivo
 	        $archivoUsuarios = file_get_contents("usuarios.json");
 
+	        //2: Lo divido por lineas
 	        $usuariosJSON = explode("\n", $archivoUsuarios);
 
+	        //3: Borro la linea vacía del final
 	        $cantidadUsuarios = count($usuariosJSON);
 	        $elUltimo = $cantidadUsuarios - 1;
 
 	        unset($usuariosJSON[$elUltimo]);
 
+	        //4: Recorro mis lineas y las paso a arrays
 	        foreach ($usuariosJSON as $usuarioJSON) {
 	        	$usuarioArray = json_decode($usuarioJSON, true);
 
@@ -44,6 +50,7 @@
 	            return 1;
 	        }
 
+	        //4: Traigo el último usuario
 	        $ultimoUsuario = $usuariosJSON[$elUltimo];
 
 	        $ultimoUsuario = json_decode($ultimoUsuario, true);
@@ -60,10 +67,4 @@
 
 	    	file_put_contents("usuarios.json", $usuarioJSON . "\n", FILE_APPEND);
 	    }
-
-			public function modificar(){
-				$archivoUsuarios = file_get_contents("usuarios.json");
-				$usuariosJSON = explode("\n", $archivoUsuarios);
-				print_r($usuariosJSON);die();
-		}
 	}

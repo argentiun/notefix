@@ -9,15 +9,15 @@
 
 			$erroresRegister = [];
 				if (empty(trim($datos["name"]))){
-						$erroresRegister["name"] = "Completar nombre!";
+						$erroresRegister["name"] = "Completa tu nombre";
 				}
 
 				if (empty(trim($datos["lastname"]))){
-						$erroresRegister["lastname"] = "Completar apellido!";
+						$erroresRegister["lastname"] = "Completa tu apellido";
 				}
 
 				if (empty(trim($datos["tel"]))){
-						$erroresRegister["tel"] = "Completa tu telefono!";
+						$erroresRegister["tel"] = "Completa tu telefono";
 				}
 
 

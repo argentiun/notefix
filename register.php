@@ -13,7 +13,7 @@
 
       if (!empty($_POST) && $_POST["submit"] == "Registrarse"){
           $validador = new ValidadorUsuario();
-          
+
           $erroresRegister = $validador->validar($_POST, $repo);
 
           if (empty($erroresRegister)){
@@ -26,8 +26,8 @@
                   $_POST["pass1"]
               );
               $usuario->setPassword($_POST["pass1"]);
-              $usuario->guardar($repoUsuarios);
               $usuario->setAvatar($_FILES["avatar"]);
+              $usuario->guardar($repoUsuarios);
 
               header("Location:index.php?registerok");die();
           }

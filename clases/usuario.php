@@ -1,12 +1,12 @@
 <?php
-	require_once("repositorioUsuarios.php");
+	require_once("clases/repositorioUsuarios.php");
 
 	class Usuario {
+		private $id;
 		private $name;
 		private $lastname;
 		private $tel;
 		private $email;
-		private $id;
 		private $password;
 		private $avatar;
 
