@@ -67,8 +67,7 @@ class ProductsController extends Controller
     public function edit(Product $product)
     {
         $categories = \App\Category::all();
-        $materials = \App\Material::all();
-        return view('products.form-edit', compact('categories', 'materials', 'product'));
+        return view('products.form-edit', compact('categories', 'product'));
     }
 
     /**
@@ -114,7 +113,7 @@ class ProductsController extends Controller
       $ext = $file->extension();
       $name = uniqid();
       // $file->storeAs('images/products-'.$product->id, $name.'.'.$ext);
-      $file‐>storeAs('products‐'.$product->id, $name.'.'.$ext);
+      $file->storeAs('products‐'.$product->id, $name.'.'.$ext);
 
       //persiste en base
       // $image = new \App\Image(['src' => 'images/products-'.$product->id.'/'.$name.'.'.$ext]);

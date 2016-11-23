@@ -76,7 +76,7 @@
                                   <a href="{{ url('/register') }}">¿No tiene cuenta?</a>
                               </li>
                               <li>
-                                  <a href="#">¿Olvidó su contraseña?</a>
+                                  <a href="{{ url('/password/reset') }}">¿Olvidó su contraseña?</a>
                               </li>
                           </ul>
                         </li>
