@@ -50,33 +50,69 @@
    <div class="container">
 <!--
        <!-- Bienvenida -->
-       <div class="row">
+       <div class="row ">
            <div class="col-lg-12">
-               <h1 class="page-header">
+               <h1 class="page-header text-center">
                    Bienvenido a NoteFix
                </h1>
-                <p class="lead">
+                <p class="lead text-center">
                  En noteFix contamos con mas de 10 años de experiencia. Nos importa que nuestros clientes sean tanto particulares como comerciales. Todos merecen precios convenientes y servicio de calidad. Nos enorgullecemos de nuestra atención  y de nuestra rápida respuesta a sus necesidades.
                </p>
            </div>
-       <!-- Reparaciones -->
+       <!-- Productos -->
        <div class="row">
+         <article class="product">
+           <a href="{{url('products')}}">
+               <img src="/img/notebook.jpg" alt="notebook">
+             <div class="txt-img">
+               <h2>NoteBooks</h2>
+             </div>
+           </a>
+         </article>
+         <article class="product">
+           <a href="{{url('products')}}">
+             <img src="/img/netbook.jpg" alt="netbooks">
+             <div class="txt-img">
+               <h2>NetBooks</h2>
+             </div>
+           </a>
+         </article>
+         <article class="product">
+           <a href="{{url('products')}}">
+             <img src="/img/tablet.jpg" alt="tablet">
+             <div class="txt-img">
+               <h2>Tablets</h2>
+             </div>
+           </a>
+         </article>
+         <article class="product">
+           <a href="{{url('products')}}">
+             <img src="/img/pcarmada.jpg" alt="pcarmada">
+             <div class="txt-img">
+               <h2>PC Armada</h2>
+             </div>
+           </a>
+         </article>
+       </div>
+       <!-- Reparaciones -->
+       <div class="row lead">
            <div class="col-lg-12">
                <h2 class="page-header">Reparaciones noteFix</h2>
            </div>
            <div class="col-md-6">
+             <br>
                <ul>
-                   <li><strong>Garantia propia</strong>
-                   </li>
+                   <li>Garantia propia</li>
                    <li>Envios y retiros a domicilio en todo CABA</li>
                    <li>Repuestos originales</li>
                    <li>Mano de obra de nuestros propios tecnicos</li>
                    <li>Presupuestos sin cargo</li>
                </ul>
-               <p>Somos usuarios como nuestros clientes y sabemos lo que hacemos. Brindamos atencion personalizada a cada uno de nuestros clientes, tanto particulares como a comerciales </p>
+               <br>
+               <p>Somos usuarios como nuestros clientes y sabemos lo que hacemos. Brindamos atencion personalizada a cada uno de nuestros clientes, tanto particulares como a comerciales ofreciendo un servicio de primera gracias a la formacion de nuestros profesionales encargados.  </p>
            </div>
            <div class="col-md-6">
-               <img class="img-responsive" src="http://www.cursosrosario.com/wp-content/uploads/2014/03/repararnote.jpg" alt="">
+               <img class="img-responsive" src="https://dsutech.co.uk/file/computer-repairs.png" alt="">
            </div>
        </div>
        <!-- /.row -->
@@ -115,7 +151,7 @@
   {{-- <script src="js/jquery.js"></script>
 --}}
   <!-- Bootstrap Core JavaScript -->
-  {{-- <script src="js/bootstrap.min.js"></script> --}}3
+  {{-- <script src="js/bootstrap.min.js"></script> --}}
 
   <!-- Script to Activate the Carousel -->
   <script>

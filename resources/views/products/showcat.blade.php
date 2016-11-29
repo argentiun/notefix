@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-  {{$product->name}}
+  {{-- {{$product->name}} --}}
 @endsection
 
 @section('contenido')
@@ -10,13 +10,13 @@
       <!-- Page Heading/Breadcrumbs -->
       <div class="row">
           <div class="col-lg-12">
-              <h1 class="page-header">{{$product->name}}
+              {{-- <h1 class="page-header">{{$product->name}}
               </h1>
               <ol class="breadcrumb">
                   <li><a href="/">Home</a>
                   </li>
                   <li><a href="/">{{$product->category->value}}</a></li>
-                  <li class="active">{{$product->name}}</li>
+                  <li class="active">{{$product->name}}</li> --}}
               </ol>
           </div>
       </div>
@@ -39,7 +39,7 @@
                     {{-- <div class="item active">
                       <img class="img-responsive" src="/img/{{$image->src}}" style="height:550px;" alt="">
                     </div> --}}
-                      @forelse($product->images as $image)
+                      {{-- @forelse($product->images as $image)
 
                         <div class="item">
                           <img class="img-responsive"  src="/img/{{$image->src}}" style="height:100%; margin:0 auto;" alt="">
@@ -54,7 +54,7 @@
                   $( document ).ready(function() {
                     $(".carousel-inner div").first().addClass("item active");
                   });
-                  </script>
+                  </script> --}}
 
                   <!-- Controls -->
                   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -67,9 +67,9 @@
           </div>
 
           <div class="col-md-4">
-              <h3>{{$product->name}}</h3>
+              {{-- <h3>{{$product->name}}</h3>
               <p>{{$product->description}}</p>
-              <h2>${{$product->price}}</h2>
+              <h2>${{$product->price}}</h2> --}}
           </div>
 
       </div>
@@ -78,7 +78,7 @@
 <div class="row">
   <br><br>
 </div>
-@if (Auth::id()==$product->user_id)
+{{-- @if (Auth::id()==$product->user_id)
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <form action="/products/{{$product->id}}/images" class="dropzone" method="post">
@@ -97,9 +97,17 @@
       <a class="btn btn-lg btn-default btn-block" href="/products/{{$product->id}}/edit">Editar/eliminar producto</a>
     </div>
   </div>
-@endif
+@endif --}}
 
 
+@foreach($categories as $category)
+  <li>
+    <a href="categories/{{$category->id}}">{{$category->value}}</a>
+  </li>
+  @foreach ($category->product as $product)
+    {{$product}}<br><br>
+  @endforeach
+@endforeach
 
 
 
@@ -113,7 +121,6 @@
       </footer>
   </div>
   <!-- /.container -->
-
 
 
 

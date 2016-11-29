@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
+@section('titulo')
+  Registrate
+@endsection
+
 @section('contenido')
   <div class="container">
+    <div class="row">
+      <br><br>
+    </div>
     <form action="/products" method="post" class="form-horizontal">
       {{ csrf_field() }}
       {{ method_field('post') }}

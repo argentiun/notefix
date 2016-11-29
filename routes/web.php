@@ -16,8 +16,20 @@ Route::get('/', function () {
 });
 
 Route::resource('products', 'ProductsController');
+Route::resource('profile', 'ProductsController');
 Route::post('products/{id}/images', 'ProductsController@images');
 
 Auth::routes();
 
 Route::get('faq', 'PageController@faq');
+Route::get('profile', 'PageController@profile');
+
+Route::get('/reparacion', function () {
+    return view('fixit');
+});
+
+// Route::get('categories/{id}','CategoriesController@index');
+
+
+
+Route::get('categories/{id}', 'CategoriesController@show');

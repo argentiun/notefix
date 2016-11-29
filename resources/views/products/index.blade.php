@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-  NOMBRE DEL LSTADO DE PRODUCTOS EJEMPLO NOTEBOOKSSS
+  Productos
 @endsection
 
 @section('contenido')
@@ -11,13 +11,17 @@
       <!-- Page Heading/Breadcrumbs -->
       <div class="row">
           <div class="col-lg-12">
-              <h1 class="page-header">Three Column Portfolio
-                  <small>Subheading</small>
+              <h1 class="page-header">Productos
               </h1>
               <ol class="breadcrumb">
-                  <li><a href="index.html">Home</a>
+                  <li><a href="/">Home</a>
                   </li>
-                  <li class="active">Three Column Portfolio</li>
+                  <li class="active">Productos</li>
+                  @foreach($categories as $category)
+                    <li>
+                      <a href="categories/{{$category->id}}">{{$category->value}}</a>
+                    </li>
+                  @endforeach
               </ol>
           </div>
       </div>
@@ -28,18 +32,24 @@
 
       <!-- Projects Row -->
       <div class="row">
-        @foreach($products as $product)
-          <div class="col-md-4 img-portfolio">
-              <a href="{{url('products/')}}">
-                  <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
-              </a>
-              <h3>
-                  <a href="products/{{$product->id}}">{{ $product->name }}</a>
-              </h3>
-              <p>{{ $product->description }}</p>
-          </div>
-        @endforeach
-      </div>
+      @foreach($products as $product)
+        <div class="col-md-4 img-portfolio" style="height:340px;">
+            <a href="products/{{$product->id}}">
+              @forelse($product->images as $image)
+                @if ($loop->first)
+                  <img class="img-responsive img-hover img-thumbnail" src="/img/{{$image->src}}"style="height:214px; display:block; margin: 0 auto;">
+                @endif
+              @empty
+                <img class="img-responsive img-hover img-thumbnail" src="/img/nhic.png" style="height:214px; display:block; margin: 0 auto;">
+              @endforelse
+            </a>
+            <h3>
+                <a href="products/{{$product->id}}">{{ $product->name }}</a>
+            </h3>
+            <p>{{ str_limit($product->description, $limit=150, $end = '...')}}</p>
+        </div>
+      @endforeach
+    </div>
       <!-- /.row -->
 
       <hr>

@@ -10,6 +10,9 @@
     <link href="/css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilostemplate.css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/css.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css"rel="stylesheet">
+
     {{-- <link href="/css/css.css" rel="stylesheet"> --}}
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,7 +20,6 @@
 </head>
 <body>
 
-  @include('Partials.navbar')
-
+  @include('partials.navbar')
   @yield('contenido')
   @yield('scripts')
