@@ -32,7 +32,6 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $product = \Auth::user()->products()->create($request->all());
-        // $product->materials()->sync($request->input('materials'));
         return redirect('products');
     }
 
