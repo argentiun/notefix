@@ -1,0 +1,13 @@
+{
+  "Kevin Ghio";
+  "Gabriel Ludueña";
+}
+
+
+{
+  "Kevin Ghio":
+  "Armado de tablas y logica de vistas y rutas";
+  
+  "Gabriel Ludueña":
+  "Front-end, formularios de creacion y edicion";
+}
