@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Product extends Model
 {
     // use Sluggable;
 
     protected $fillable = ['name', 'description', 'price', 'category_id', 'slug'];
-    // protected $fillable = ['name', 'description', 'price', 'category_id'];
 
     // public function sluggable()
     // {
@@ -19,7 +19,7 @@ class Product extends Model
     //         ]
     //     ];
     // }
-
+    //
     // public function getRouteKeyName()
     // {
     //     return 'slug';
