@@ -17,10 +17,10 @@
         <label for="name">Nombre</label>
         <input type="text" name="name" value="{{ old('name') }}" class="form-control">
       </div>
-      <div class="form-group">
+      {{-- <div class="form-group">
         <label for="slug">slug</label>
         <input type="text" name="slug" value="{{ old('slug') }}" class="form-control">
-      </div>
+      </div> --}}
 
       <div class="form-group">
         <label for="price">Precio</label>

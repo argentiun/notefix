@@ -11,19 +11,19 @@ class Product extends Model
 
     protected $fillable = ['name', 'description', 'price', 'category_id', 'slug'];
 
-    // public function sluggable()
-    // {
-    //     return [
-    //         'slug' => [
-    //             'source' => 'name'
-    //         ]
-    //     ];
-    // }
-    //
-    // public function getRouteKeyName()
-    // {
-    //     return 'slug';
-    // }
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     //relaciones
     public function category()

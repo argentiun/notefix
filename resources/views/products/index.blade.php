@@ -29,7 +29,8 @@
       <div class="row">
       @foreach($products as $product)
         <div class="col-md-4 img-portfolio" style="height:340px;">
-            <a href="/products/{{$product->id}}">
+            {{-- <a href="/products/{{$product->id}}"> --}}
+            <a href="/products/{{$product->slug}}">
               @forelse($product->images as $image)
                 @if ($loop->first)
                   <img class="img-responsive img-hover img-thumbnail" src="/img/{{$image->src}}"style="height:214px; display:block; margin: 0 auto;">
@@ -39,7 +40,8 @@
               @endforelse
             </a>
             <h3>
-                <a href="/products/{{$product->id}}">{{ $product->name }}</a>
+                {{-- <a href="/products/{{$product->id}}">{{ $product->name }}</a> --}}
+                <a href="/products/{{$product->slug}}">{{ $product->name }}</a>
             </h3>
             <p>{{ str_limit($product->description, $limit=150, $end = '...')}}</p>
         </div>
