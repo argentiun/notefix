@@ -35,6 +35,7 @@
                       <div class="fallback">
                         <input name="file" type="file"/>
                       </div>
+                      <button type="submit" name="button">Listo!</button>
                     </form>
                   </div>
                 </div>

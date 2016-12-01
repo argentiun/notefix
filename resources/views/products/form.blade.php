@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-  Registrate
+  Crear Publicacion
 @endsection
 
 @section('contenido')

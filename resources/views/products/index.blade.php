@@ -29,7 +29,6 @@
       <div class="row">
       @foreach($products as $product)
         <div class="col-md-4 img-portfolio" style="height:340px;">
-            {{-- <a href="/products/{{$product->id}}"> --}}
             <a href="/products/{{$product->slug}}">
               @forelse($product->images as $image)
                 @if ($loop->first)
@@ -40,7 +39,6 @@
               @endforelse
             </a>
             <h3>
-                {{-- <a href="/products/{{$product->id}}">{{ $product->name }}</a> --}}
                 <a href="/products/{{$product->slug}}">{{ $product->name }}</a>
             </h3>
             <p>{{ str_limit($product->description, $limit=150, $end = '...')}}</p>
@@ -96,10 +94,8 @@
   <!-- /.container -->
 
   <!-- jQuery -->
-  <script src="js/jquery.js"></script>
+  <script src="/js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  {{-- <script src="js/bootstrap.min.js"></script> --}}
 
 </body>
 
