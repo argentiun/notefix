@@ -15,7 +15,7 @@
               <ol class="breadcrumb">
                   <li><a href="/">Home</a>
                   </li>
-                  <li><a href="/">{{$product->category->value}}</a></li>
+                  <li><a href="/categories/{{$product->category->id}}">{{$product->category->value}}</a></li>
                   <li class="active">{{$product->name}}</li>
               </ol>
           </div>

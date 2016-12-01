@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Product;
+use App\Image;
+use App\Category;
+
 class CategoriesController extends Controller
 {
 
     public function index()
     {
-
+      $categories = \App\Category::where('id', $id)->get();
+      $products = Product::visibles()->get();
+      return view('products.showcat', compact('categories','products'));
     }
 
     public function create()
@@ -25,7 +31,8 @@ class CategoriesController extends Controller
     public function show($id){
 
          $categories = \App\Category::where('id', $id)->get();
-        return view('products.showcat', compact('categories'));
+         $products = Product::visibles()->get();
+        return view('products.showcat', compact('categories','products'));
     }
 
     public function edit($id)

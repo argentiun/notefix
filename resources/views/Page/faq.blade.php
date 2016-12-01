@@ -6,7 +6,7 @@
 
 @section('contenido')
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-6 col-lg-offset-3">
           <h1 class="page-header">Preguntas Frecuentes.
               <small></small>
           </h1>
@@ -16,12 +16,12 @@
 
   <!-- Content Row -->
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-6 col-lg-offset-3">
           <div class="panel-group" id="accordion">
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1.¿Hacen retiros/entregas a domicilio o es necesario presentarse a una de las sucursales?</a>
+                          <a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >1.¿Hacen retiros/entregas a domicilio o es necesario presentarse a una de las sucursales?</a>
                       </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse">
@@ -34,7 +34,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. ¿Cuánto tiempo tarda en ser reparada mi notebook/tablet/pc?</a>
+                          <a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. ¿Cuánto tiempo tarda en ser reparada mi notebook/tablet/pc?</a>
                       </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse">
@@ -47,7 +47,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. ¿Por qué necesito crear una cuenta para hacer consultas online y solicitar los servicios a través de este medio?</a>
+                          <a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. ¿Por qué necesito crear una cuenta para hacer consultas online y solicitar los servicios a través de este medio?</a>
                       </h4>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse">
@@ -60,7 +60,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">4.¿Es seguro manejar los pagos a través de la página?</a>
+                          <a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">4.¿Es seguro manejar los pagos a través de la página?</a>
                       </h4>
                   </div>
                   <div id="collapseFour" class="panel-collapse collapse">
@@ -73,7 +73,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h4 class="panel-title">
-                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">5.¿Cómo adquirir nuevos productos o accesorios?</a>
+                          <a class="accordion-toggle lead" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">5.¿Cómo adquirir nuevos productos o accesorios?</a>
                       </h4>
                   </div>
                   <div id="collapseFive" class="panel-collapse collapse">
@@ -103,11 +103,6 @@
   </div>
   <!-- /.container -->
 
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
 
   </body>
 

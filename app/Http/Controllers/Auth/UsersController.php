@@ -23,11 +23,13 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user, Image $images)
+    public function show(User $user)
     // public function show()
     {
+        $categories = \App\Category::all();
+        $products = \App\Product::visibles()->get();
         // return view('products.show', compact('product'));
-        return view('users.show', compact('product'));
+        return view('profile', compact('user'));
     }
 
     /**
@@ -38,7 +40,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        $categories = \App\Category::all();
+        $user = \App\Category::all();
         return view('users.form-edit', compact('categories', 'user'));
     }
 

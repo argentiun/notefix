@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('products', 'ProductsController');
-Route::resource('profile', 'ProductsController');
+Route::get('categories/{category_id}/{id}/', 'ProductsController@show');
 Route::post('products/{id}/images', 'ProductsController@images');
 
 Auth::routes();
@@ -28,7 +28,7 @@ Route::get('/reparacion', function () {
     return view('fixit');
 });
 
-// Route::get('categories/{id}','CategoriesController@index');
+//Route::get('categories/{id}','CategoriesController@index');
 
 
 

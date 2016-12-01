@@ -21,13 +21,19 @@
                     <a href="article/index" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{url('products')}}">Notebooks</a>
+                            <a href="{{url('/products')}}">Todos</a>
                         </li>
                         <li>
-                            <a href="{{url('products')}}">Netbooks</a>
+                            <a href="{{url('/categories/1')}}">Notebooks</a>
                         </li>
                         <li>
-                            <a href="{{url('products')}}">Tablets</a>
+                            <a href="{{url('/categories/2')}}">Netbooks</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/categories/3')}}">Tablets</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/categories/4')}}">Celulares</a>
                         </li>
                     </ul>
                 </li>
@@ -45,12 +51,12 @@
                     <li class="dropdown ">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
                           <ul class="dropdown-menu" style="text-align:center;">
-                              <li>
-                                <!--<p class="user"><label >Email:</label></p>-->
-                                <form method="POST" action="{{ url('/login') }}">
-                                  {{ csrf_field() }}
-                                  <input name="email" type="text" placeholder="Ingresa Email" autofocus="" value="" >
-                              </li>
+                                <li>
+                                  <!--<p class="user"><label >Email:</label></p>-->
+                                  <form method="POST" action="{{ url('/login') }}">
+                                    {{ csrf_field() }}
+                                    <input name="email" type="text" placeholder="Ingresa Email" autofocus="" value="" >
+                                </li>
                               <li>
                                 <!--<p class="pass"><label>Contraseña:</label></p>-->
                                     <input name="password" type="password" placeholder="Ingresa Password">
@@ -90,7 +96,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="profile">Mi cuenta</a>
+                                    <a href="/profile">Mi cuenta</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/products/create') }}">Cargar Producto</a>

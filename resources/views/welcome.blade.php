@@ -62,7 +62,7 @@
        <!-- Productos -->
        <div class="row">
          <article class="product">
-           <a href="{{url('products')}}">
+           <a href="{{url('/categories/1')}}">
                <img src="/img/notebook.jpg" alt="notebook">
              <div class="txt-img">
                <h2>NoteBooks</h2>
@@ -70,7 +70,7 @@
            </a>
          </article>
          <article class="product">
-           <a href="{{url('products')}}">
+           <a href="{{url('/categories/2')}}">
              <img src="/img/netbook.jpg" alt="netbooks">
              <div class="txt-img">
                <h2>NetBooks</h2>
@@ -78,7 +78,7 @@
            </a>
          </article>
          <article class="product">
-           <a href="{{url('products')}}">
+           <a href="{{url('/categories/3')}}">
              <img src="/img/tablet.jpg" alt="tablet">
              <div class="txt-img">
                <h2>Tablets</h2>
@@ -86,7 +86,7 @@
            </a>
          </article>
          <article class="product">
-           <a href="{{url('products')}}">
+           <a href="{{url('/categories/4')}}">
              <img src="/img/pcarmada.jpg" alt="pcarmada">
              <div class="txt-img">
                <h2>PC Armada</h2>

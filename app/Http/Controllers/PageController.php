@@ -12,8 +12,9 @@ class PageController extends Controller
       return view('page.faq');
     }
 
-    public function profile(User $user, Product $product)
+    public function profile()
     {
-      return view('profile');
+      $products = Product::visibles();
+      return view('profile', compact('products'));
     }
 }

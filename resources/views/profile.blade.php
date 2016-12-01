@@ -43,9 +43,10 @@
 
         <div class="col-md-5">
           <h3>Mis productos</h3>
-          <ul>
-
-          </ul>
+          <?php foreach ($products as $product): ?>
+            <p>{{$product}}</p>
+            <br>
+          <?php endforeach; ?>
         </div>
 
       </div>
