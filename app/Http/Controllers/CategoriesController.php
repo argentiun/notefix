@@ -31,7 +31,8 @@ class CategoriesController extends Controller
     public function show($id){
 
          $categories = \App\Category::where('id', $id)->get();
-         $products = Product::visibles()->get();
+         $products = Product::where("category_id", $id)
+                            ->where("visible","=",1)->get();
         return view('products.showcat', compact('categories','products'));
     }
 

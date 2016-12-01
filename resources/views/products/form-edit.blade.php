@@ -9,7 +9,7 @@
       <br><br>
     </div>
     <div class="col-md-8 col-md-offset-2">
-      <form action="/products/{{$product->slug}}" method="post" class="form-horizontal">
+      <form action="/products/{{$product->id}}" method="post" class="form-horizontal">
         {{ csrf_field() }}
         {{ method_field('patch') }}
 
@@ -40,10 +40,10 @@
 
 
             <div class="form-group">
-              <input type="submit" name="Enviar" class="btn btn-primary">
+              <input type="submit" name="Enviar" value="Guardar cambios" class="btn btn-default">
             </div>
           </form>
-          <form action="/products/{{$product->slug}}" method="post" class="form-horizontal">
+          <form action="/products/{{$product->id}}" method="post" class="form-horizontal">
             {{ csrf_field() }}
             {{ method_field('delete') }}
             <div class="form-group">

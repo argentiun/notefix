@@ -33,3 +33,6 @@ Route::get('/reparacion', function () {
 
 
 Route::get('categories/{id}', 'CategoriesController@show');
+
+
+Route::match(["post", "patch"], '/register/{id}', 'PageController@update');

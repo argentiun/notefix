@@ -51,7 +51,6 @@ class ProductsController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->all());
-        // $product->materials()->sync($request->input('materials'));
         return redirect('products');
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-  Crear Publicacion
+  Registrate
 @endsection
 
 @section('contenido')
@@ -9,6 +9,7 @@
     <div class="row">
       <br><br>
     </div>
+    <div class="col-md-8 col-md-offset-2">
     <form action="/products" method="post" class="form-horizontal">
       {{ csrf_field() }}
       {{ method_field('post') }}
@@ -17,10 +18,10 @@
         <label for="name">Nombre</label>
         <input type="text" name="name" value="{{ old('name') }}" class="form-control">
       </div>
-      {{-- <div class="form-group">
+      <div class="form-group">
         <label for="slug">slug</label>
         <input type="text" name="slug" value="{{ old('slug') }}" class="form-control">
-      </div> --}}
+      </div>
 
       <div class="form-group">
         <label for="price">Precio</label>
@@ -43,10 +44,11 @@
 
 
       <div class="form-group">
-        <input type="submit" name="Enviar" class="btn btn-primary">
+        <input type="submit" name="Enviar" class="btn btn-default">
       </div>
 
     </form>
+    </div>
   </div>
 
 @endsection

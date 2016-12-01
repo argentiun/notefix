@@ -39,9 +39,12 @@
               @endforelse
             </a>
             <h3>
-                <a href="/products/{{$product->slug}}">{{ $product->name }}</a>
+                <a href="/products/{{$product->slug}}">{{ str_limit($product->name, $limit=19, $end = '...') }}</a>
             </h3>
             <p>{{ str_limit($product->description, $limit=150, $end = '...')}}</p>
+            <h4 style="text-align: right; margin-right: 22px;">
+              ${{$product->price}}
+            </h4>
         </div>
       @endforeach
     </div>
@@ -94,8 +97,10 @@
   <!-- /.container -->
 
   <!-- jQuery -->
-  <script src="/js/jquery.js"></script>
+  <script src="js/jquery.js"></script>
 
+  <!-- Bootstrap Core JavaScript -->
+  {{-- <script src="js/bootstrap.min.js"></script> --}}
 
 </body>
 

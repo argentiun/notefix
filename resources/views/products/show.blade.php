@@ -28,9 +28,17 @@
           <div class="col-md-8">
               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
+                  <!--<ol class="carousel-indicators">
+                      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol> -->
 
+                  <!-- Wrapper for slides -->
                   <div class="carousel-inner">
-
+                    {{-- <div class="item active">
+                      <img class="img-responsive" src="/img/{{$image->src}}" style="height:550px;" alt="">
+                    </div> --}}
                       @forelse($product->images as $image)
 
                         <div class="item">
@@ -73,7 +81,7 @@
 @if (Auth::id()==$product->user_id)
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <form action="/products/{{$product->slug}}/images" class="dropzone" method="post">
+      <form action="/products/{{$product->id}}/images" class="dropzone" method="post">
         {{ csrf_field() }}
         <div class="fallback">
           <input name="file" type="file" multiple />
