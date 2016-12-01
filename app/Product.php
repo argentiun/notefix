@@ -7,7 +7,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Product extends Model
 {
-    // use Sluggable;
+    use Sluggable;
 
     protected $fillable = ['name', 'description', 'price', 'category_id', 'slug'];
 
