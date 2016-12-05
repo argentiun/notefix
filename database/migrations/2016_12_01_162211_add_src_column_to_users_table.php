@@ -9,7 +9,7 @@ class AddSrcColumnToUsersTable extends Migration
   public function up()
   {
       Schema::table('users', function (Blueprint $table) {
-          $table->string('src');
+          $table->string('src')->default('/img/default-profile.png');
       });
   }
 
