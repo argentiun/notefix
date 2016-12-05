@@ -41,6 +41,12 @@
                     </div>
                   </form>
                 </div>
+                <form action="/profile/avatar" class="dropzone" method="post">
+                  {{ csrf_field() }}
+                  <div class="fallback">
+                    <input name="file" type="file" multiple />
+                  </div>
+                </form>
             </div>
         </div>
 

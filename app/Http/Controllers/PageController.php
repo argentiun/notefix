@@ -9,13 +9,15 @@ use App\Product;
 class PageController extends Controller
 {
     public function faq(){
-      return view('page.faq');
+      return view('cart');
     }
+
 
     public function profile()
     {
       $products = Product::visibles()->get();
-      return view('profile', compact('products'));
+      $theuser = \Auth::user();
+      return view('profile', compact('products','theuser'));
     }
 
     public function update(Request $request, User $user)
@@ -25,21 +27,24 @@ class PageController extends Controller
       $user = \Auth::user()->update($request->all());
       // $user->update($request->all());
       return redirect('/profile');
-
-      // PARA LA IMAGEN
-      //guardo el archivo
-      // $id = \Auth::user()->id;
-      // $usuario = User::find($id);
-      // $file = $request->file('file');
-      // // $ext = $file->extension();
-      // $ext = pathinfo($file, PATHINFO_EXTENSION);
-      // $name = uniqid();
-      // $file->storeAs('avatar-'.$usuario->id, $name.'.'.$ext);
-      //
-      // //persiste en base
-      // $image = new \App\Image(['src' => 'avatar-'.$usuario->id.'/'.$name.'.'.$ext]);
-      // $usuario->src()->save($image);
     }
+
+    public function avatar(Request $request)
+    {
+      //guardo el archivo
+      $user = \Auth::user();
+      $file = $request->file('file');
+      $ext = $file->extension();
+      $name = uniqid();
+      $file->storeAs('avatar-'.$user->id, $name.'.'.$ext);
+
+      //persiste en base
+      $user = User::find(\Auth::id());
+      $avatar = 'avatar-'.$user->id.'/'.$name.'.'.$ext;
+      $user->src = "img/".$avatar;
+      $user->save();
+    }
+
 
 
 }
