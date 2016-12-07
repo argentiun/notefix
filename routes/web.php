@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::resource('products', 'ProductsController');
 Route::get('categories/{category_id}/{id}/', 'ProductsController@show');
 Route::post('products/{id}/images', 'ProductsController@images');
@@ -33,5 +32,7 @@ Route::get('categories/{id}', 'CategoriesController@show');
 
 Route::post('profile/avatar', 'PageController@avatar');
 Route::get('profile', 'PageController@profile');
+Route::get('profile/edit', 'PageController@profileEdit');
+Route::get('profile/wl', 'PageController@profileWholeList');
 Route::get('faq', 'PageController@faq');
 Route::match(["post", "patch"], '/register/{id}', 'PageController@update');

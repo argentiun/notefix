@@ -29,7 +29,7 @@
       <div class="row">
       @foreach($products as $product)
         <div class="col-md-4 img-portfolio" style="height:340px;">
-            <a href="/products/{{$product->slug}}">
+            <a href="products/{{$product->slug}}">
               @forelse($product->images as $image)
                 @if ($loop->first)
                   <img class="img-responsive img-hover img-thumbnail" src="/img/{{$image->src}}"style="height:214px; display:block; margin: 0 auto;">
@@ -88,7 +88,7 @@
       <footer>
           <div class="row">
               <div class="col-lg-12">
-                  <p>Copyright &copy; Your Website 2014</p>
+                  <p>Copyright &copy; NoteFix 2016</p>
               </div>
           </div>
       </footer>

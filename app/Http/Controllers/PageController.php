@@ -9,9 +9,21 @@ use App\Product;
 class PageController extends Controller
 {
     public function faq(){
-      return view('cart');
+      return view('page.faq');
     }
 
+    public function profileEdit()
+    {
+      $products = Product::visibles()->get();
+      $theuser = \Auth::user();
+      return view('profile-edit', compact('products','theuser'));
+    }
+    public function profileWholeList()
+    {
+      $products = Product::visibles()->get();
+      $theuser = \Auth::user();
+      return view('profile-wl', compact('products','theuser'));
+    }
 
     public function profile()
     {
@@ -39,7 +51,6 @@ class PageController extends Controller
       $file->storeAs('avatar-'.$user->id, $name.'.'.$ext);
 
       //persiste en base
-      $user = User::find(\Auth::id());
       $avatar = 'avatar-'.$user->id.'/'.$name.'.'.$ext;
       $user->src = "img/".$avatar;
       $user->save();

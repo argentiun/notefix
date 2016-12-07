@@ -229,19 +229,21 @@ body{
 
 
 input{
-  width: 95%;
+  width: 100%;
   padding: 8px;
   border: 1px solid grey;
   border-radius: 4px;
+  margin-top: 4px;
+}
+.navinp{
   margin: 4px;
-
+  width: 90%;
 }
 input[type=submit]{
   background-color: black;
   color: white;
   padding: 10px;
   font-size: .9em;
-  width: 90%;
 }
 
 

@@ -74,30 +74,25 @@
 
       </div>
       <!-- /.row -->
-</div>
-<div class="row">
-  <br><br>
-</div>
-@if (Auth::id()==$product->user_id)
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <form action="/products/{{$product->id}}/images" class="dropzone" method="post">
-        {{ csrf_field() }}
-        <div class="fallback">
-          <input name="file" type="file" multiple />
+      <div class="row">
+        <br><br>
+      </div>
+      @if (Auth::id()==$product->user_id)
+      <div class="row">
+        <div class="col-md-8">
+          <form action="/products/{{$product->id}}/images" class="dropzone" method="post">
+            {{ csrf_field() }}
+            <div class="fallback">
+              <input name="file" type="file" multiple />
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="row">
-    <br>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <a class="btn btn-lg btn-default btn-block" href="/products/{{$product->slug}}/edit">Editar/eliminar producto</a>
-    </div>
-  </div>
-@endif
+        <div class="col-md-4">
+          <a class="btn btn-lg btn-default btn-block" href="/products/{{$product->slug}}/edit">Editar/eliminar producto</a>
+        </div>
+      </div>
+      @endif
+</div>
 
 
 

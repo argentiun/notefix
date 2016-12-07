@@ -5,8 +5,10 @@
 @endsection
 
 @section('contenido')
+
+<div class="container">
   <div class="row">
-      <div class="col-lg-6 col-lg-offset-3">
+      <div class="col-lg-10 col-lg-offset-1">
           <h1 class="page-header">Preguntas Frecuentes.
               <small></small>
           </h1>
@@ -16,7 +18,7 @@
 
   <!-- Content Row -->
   <div class="row">
-      <div class="col-lg-6 col-lg-offset-3">
+      <div class="col-lg-10 col-lg-offset-1">
           <div class="panel-group" id="accordion">
               <div class="panel panel-default">
                   <div class="panel-heading">
@@ -94,13 +96,13 @@
   <!-- Footer -->
   <footer>
       <div class="row">
-          <div class="col-lg-12">
-              <p>Copyright &copy; Your Website 2014</p>
+          <div class="col-lg-8">
+              <p>Copyright &copy; NoteFix 2016</p>
           </div>
       </div>
   </footer>
+</div>
 
-  </div>
   <!-- /.container -->
 
 

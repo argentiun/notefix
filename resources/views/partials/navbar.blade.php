@@ -55,14 +55,14 @@
                                   <!--<p class="user"><label >Email:</label></p>-->
                                   <form method="POST" action="{{ url('/login') }}">
                                     {{ csrf_field() }}
-                                    <input name="email" type="text" placeholder="Ingresa Email" autofocus="" value="" >
+                                    <input class="navinp" name="email" type="text" placeholder="Ingresa Email" autofocus="" value="" >
                                 </li>
                               <li>
                                 <!--<p class="pass"><label>Contraseña:</label></p>-->
-                                    <input name="password" type="password" placeholder="Ingresa Password">
+                                    <input class="navinp" name="password" type="password" placeholder="Ingresa Password">
                               </li>
                               <li>
-                                <p class="ingresar"><input type="submit" name="submit" value="Ingresar" class="boton" style="background-color:#555555; border-radius:5px; color:white;"></p>
+                                <p class="ingresar"><input class="navinp" type="submit" name="submit" value="Ingresar" class="boton" style="background-color:#555555; border-radius:5px; color:white;"></p>
                               </li>
                               <li>
                                 <p class="field"><input type="checkbox" name="remember">Recordarme</p>
@@ -91,7 +91,7 @@
                             <a href="#" class="dropdown-toggle"data-toggle="dropdown">
                                <!-- alt="" class="img-circle" style="height: 30px; display:inline-block;"  -->
                               {{ Auth::user()->name }}
-                              <img class="img-circle" height="25px" width="25px" style="display: inline-block;"src="/img/default-profile.png"/>
+                              <img class="img-circle" height="25px" width="25px" style="display: inline-block;"src="/{{ Auth::user()->src}}"/>
                               <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">

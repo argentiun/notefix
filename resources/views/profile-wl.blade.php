@@ -33,7 +33,7 @@
                           <strong>Teléfono:</strong><p>{{Auth::user()->tel}}</p>
     											<strong>Email:</strong><p>{{Auth::user()->email}}</p>
                           <hr>
-                          <a href="profile/edit"><input type="submit" name="Enviar"  value="Editar datos" class="btn btn-default"></a>
+                          <a href="/profile/edit"><input type="submit" name="Enviar"  value="Editar datos" class="btn btn-default"></a>
                     </div>
                 </div>
             </div>
@@ -82,13 +82,6 @@
                 <!-- </div> -->
               </div>
               </div>
-              @endif
-              @if($loop->iteration >= 2)
-              <div class="panel-body">
-                <hr>
-                <a class="lead" href="/profile/wl">Ver todos>></a>
-              </div>
-                @break
               @endif
             @endforeach
           </div>

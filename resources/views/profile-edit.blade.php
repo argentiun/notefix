@@ -18,22 +18,28 @@
 
       <!-- Portfolio Item Row -->
       <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="col-md-10 col-md-offset-1 ">
-                      <br>
-                      <img class="img-rounded" src="/{{\Auth::user()->src}}" style="height:256px; display:block; margin: 0 auto;" alt="">
+                      <form action="/profile/avatar" class="dropzone" method="post">
+                        {{ csrf_field() }}
+                        <div class="fallback">
+                          <input name="file" type="file" />
+                        </div>
+                      </form>
                       <hr>
+                      <form class="" action="/register/{{\Auth::user()->id}}" method="post">
                       <p class="lead">Info Personal</p>
     											{{ csrf_field() }}
     											{{method_field('patch')}}
-    											<strong>Nombre:</strong><p>{{Auth::user()->name}}</p>
-    											<strong>Apellido:</strong><p>{{Auth::user()->lastname}}</p>
-                          <strong>Teléfono:</strong><p>{{Auth::user()->tel}}</p>
-    											<strong>Email:</strong><p>{{Auth::user()->email}}</p>
-                          <hr>
-                          <a href="profile/edit"><input type="submit" name="Enviar"  value="Editar datos" class="btn btn-default"></a>
+    											<strong>Nombre:</strong><input type="text" name="name" id="name" value="{{Auth::user()->name}}">
+    											<strong>Apellido:</strong><input type="text" name="lastname" id="lastname" value="{{Auth::user()->lastname}}">
+                          <strong>Teléfono:</strong><input type="text" name="tel" id="tel" value="{{Auth::user()->tel}}">
+    											<strong>Email:</strong><input type="text" name="email" id="email" value="{{Auth::user()->email}}">
+    										  <br><br>
+                          <input type="submit" name="Enviar"  value="Actualizar" class="btn btn-default">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -83,16 +89,10 @@
               </div>
               </div>
               @endif
-              @if($loop->iteration >= 2)
-              <div class="panel-body">
-                <hr>
-                <a class="lead" href="/profile/wl">Ver todos>></a>
-              </div>
-                @break
-              @endif
             @endforeach
           </div>
         </div>
+
 
       </div>
       <!-- /.row -->

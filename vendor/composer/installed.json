@@ -3617,21 +3617,21 @@
     },
     {
         "name": "cviebrock/eloquent-sluggable",
-        "version": "4.1.2",
-        "version_normalized": "4.1.2.0",
+        "version": "4.1.0",
+        "version_normalized": "4.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-            "reference": "20e78e7cc68facc934034024daf1fbaae7ce0c90"
+            "reference": "e9a020fd9d4676add911dd05d03e570735983f3d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/20e78e7cc68facc934034024daf1fbaae7ce0c90",
-            "reference": "20e78e7cc68facc934034024daf1fbaae7ce0c90",
+            "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/e9a020fd9d4676add911dd05d03e570735983f3d",
+            "reference": "e9a020fd9d4676add911dd05d03e570735983f3d",
             "shasum": ""
         },
         "require": {
-            "cocur/slugify": "^2.3",
+            "cocur/slugify": "^2.1",
             "illuminate/config": "5.1.* || 5.2.* || 5.3.*",
             "illuminate/database": "5.1.* || 5.2.* || 5.3.*",
             "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
@@ -3642,7 +3642,7 @@
             "orchestra/testbench": "^3.0",
             "phpunit/phpunit": "^4.8 || ^5.0"
         },
-        "time": "2016-11-09 15:42:49",
+        "time": "2016-09-14 17:44:13",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

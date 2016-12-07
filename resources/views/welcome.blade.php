@@ -87,9 +87,9 @@
          </article>
          <article class="product">
            <a href="{{url('/categories/4')}}">
-             <img src="/img/pcarmada.jpg" alt="pcarmada">
+             <img src="/img/cell-phone.jpg" alt="celular">
              <div class="txt-img">
-               <h2>PC Armada</h2>
+               <h2>Celulares</h2>
              </div>
            </a>
          </article>
